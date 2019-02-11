@@ -3,7 +3,6 @@
 <html>
 <head>
     <title>Meals</title>
-
 </head>
 <body>
 <div align="center">
@@ -22,18 +21,8 @@
                 <td width="40" align="center">
                         ${mealTo.calories}
                 </td>
-                <c:choose>
-                    <c:when test="${mealTo.excess == true}">
-                        <td bgcolor="red">
-                        </td>
-                    </c:when>
-                    <c:otherwise>
-                        <td bgcolor="green" width="50">
-                        </td>
-                    </c:otherwise>
-
-                </c:choose>
-
+                <td bgcolor="${(mealTo.excess) ? "red" : "green"}" width="50">
+                </td>
             </tr>
         </c:forEach>
     </table>
